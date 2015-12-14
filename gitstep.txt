@@ -1,0 +1,39 @@
+1.安装git.
+
+2.注册服务器账号，在没有项目服务器的情况下，一般使用github这个网站作为服务器。
+
+3.创建连接：
+  a】git和服务器创建ssh安全连接。
+    打开Git Bash 终端，输入 ssh-keygen -t rsa -C"1195900275@qq.com"(注册的账号）回车。
+    文件名默认可不填直接回车，两次输入秘钥回车，最后提示生成秘钥。
+  b】添加服务器的公秘钥。
+   将文件：C:\user\Administrator\.ssh\id_rsa.pub用记事本格式打开，复制全部内容去网页上seeting中的
+   “Add SSH Key".
+  c】连接测试。
+     终端输入：ssh -T git@"你的git服务器的地址”。
+     第一连接时，会询问是否信任主机，确认后输入yes,如果看到Weclome to Github,...."则配置成功。
+
+4.创建本地库：
+  --找个合适的地方，创建一个git文件夹。我是在D根目录下创建的。
+  --打开终端，进入到相应的路径下：cd d:
+  --cd git
+  --mkdir learngit
+  --cd learngit
+  --pwd 显示当前目录。
+
+5.提交文件到本地库：
+  --在learngit目录下，创建文件名为：readme.txt.
+  --文件中输入你要输入的内容。
+  --回到终端，git status 查看状态。
+  --git add readme.txt.
+  --git commit -m"备注提交的内容"。
+   如果出现"please tell me who you are",就输入：git config --global user.email "1195900275@qq.com"
+  --git commit -m"备注提交的内容".
+6.在github服务器创建远程库。
+
+7.将本地库同步到远程库。
+  --首次同步：git remote add origin git@github.com:longmomo/learngit.git
+  --将本地的内容提交到远程库：git push -u origin master.
+   
+
+
